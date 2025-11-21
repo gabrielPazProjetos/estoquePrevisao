@@ -1,0 +1,8 @@
+--- Métricas do modelo (SageMaker Canvas)
+- Erro médio absoluto (MAE): dentro do intervalo operacional esperado
+- R²: adequado para uso em previsão de estoque
+- Importância de variáveis:
+  1. PRECO
+  2. FLAG_PROMOCAO
+  3. DATA_EVENTO (efeitos temporais)
+  4. ID_PRODUTO
