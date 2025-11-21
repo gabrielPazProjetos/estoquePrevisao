@@ -1,0 +1,5 @@
+--- Configuração do modelo (SageMaker Canvas)
+- Alvo: QUANTIDADE_ESTOQUE
+- Features: ID_PRODUTO, DATA_EVENTO, PRECO, FLAG_PROMOCAO
+- DATA_EVENTO: interpretada como data
+- Modo de treinamento: AutoML (Canvas)
