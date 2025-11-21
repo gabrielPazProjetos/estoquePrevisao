@@ -1,0 +1,6 @@
+--- Insights de negócio
+- Promoções aceleram a saída de estoque, exigindo reposição mais frequente.
+- Preços elevados reduzem a velocidade de venda, mantendo estoque disponível.
+- Datas específicas (início de mês, finais de semana) apresentam maior giro.
+- Estratégias de precificação e promoção devem considerar sazonalidade.
+- Re-treinamento periódico do modelo garante previsões mais precisas.
