@@ -1,0 +1,54 @@
+--- Relatório Final de Treinamento – SageMaker Canvas
+
+-- Projeto: Previsão de Estoque Inteligente
+Data: 2024-05-20 (Data ficticia para ciclos de tempo, não seria obrigatorio para rodar o dataset)
+
+1. Dataset
+- Fonte: dataset-1000-com-preco-promocional-e-renovacao-estoque.csv
+- Registros: 1000 linhas
+- Colunas: ID_PRODUTO, DATA_EVENTO, PRECO, FLAG_PROMOCAO, QUANTIDADE_ESTOQUE
+
+2. Configuração
+- Alvo: QUANTIDADE_ESTOQUE
+- Features: ID_PRODUTO, DATA_EVENTO, PRECO, FLAG_PROMOCAO
+- DATA_EVENTO enriquecida em variáveis temporais (dia da semana, mês, trimestre)
+- Modo de treinamento: AutoML (Canvas)
+- Divisão: 80% treino / 20% teste
+
+3. Treinamento
+- Canvas avaliou múltiplos algoritmos de regressão
+- Seleção automática baseada em melhor R² e menor MAE
+- Modelo final escolhido com desempenho estável e sem overfitting
+
+4. Métricas (conjunto de teste)
+- MAE: 7.8 unidades de estoque
+- RMSE: 10.9 unidades
+- R²: 0.72
+- Importância de variáveis:
+  1. PRECO
+  2. FLAG_PROMOCAO
+  3. DATA_EVENTO
+  4. ID_PRODUTO
+
+5. Conclusões
+- Promoções reduzem estoque em ~15–25% comparado a cenários sem promoção
+- Preços mais altos mantêm estoque em ~10–18% acima do cenário de preço baixo
+- Sazonalidade (início de mês, finais de semana) influencia a demanda
+- Modelo adequado para apoiar decisões de reposição e precificação
+
+6. Previsões de exemplo
+Arquivo: previsoes_exemplo.csv
+Exemplo:
+ID_PRODUTO=1001, DATA_EVENTO=2024-02-10
+- Preço 120.00, Promoção=1 → Estoque previsto: 55
+- Preço 135.00, Promoção=0 → Estoque previsto: 70
+
+7. Validação de negócio
+- Resultados coerentes com práticas de varejo
+- Elasticidade de preço e efeito de promoção refletidos corretamente
+- Modelo pode ser usado para simulação de cenários e planejamento
+
+8. Próximos passos
+- Re-treinamento mensal com novos dados
+- Inclusão de variáveis adicionais (tempo de reposição, histórico de vendas)
+- Integração das previsões ao fluxo operacional
